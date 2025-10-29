@@ -7,60 +7,80 @@ sys.path.insert(0, str(root_dir))
 
 import json
 import time
-from openai import OpenAI
+# from openai import OpenAI  # OpenAI client - commented out for Llama
+from huggingface_hub import HfApi
 import config
 
-client = OpenAI(api_key=config.OPENAI_API_KEY)
+# client = OpenAI(api_key=config.OPENAI_API_KEY)  # OpenAI client
+hf_api = HfApi(token=config.HUGGINGFACE_API_KEY)  # HuggingFace API
 
 def upload_training_file(filepath):
-    """Upload training file to OpenAI."""
+    """Upload training file to HuggingFace / OpenAI."""
     print(f"  Uploading {filepath}...")
-    
-    with open(filepath, 'rb') as f:
-        response = client.files.create(
-            file=f,
-            purpose='fine-tune'
-        )
-    
-    print(f"    File uploaded: {response.id}")
-    return response.id
+
+    # OpenAI file upload (commented out)
+    # with open(filepath, 'rb') as f:
+    #     response = client.files.create(
+    #         file=f,
+    #         purpose='fine-tune'
+    #     )
+    # print(f"    File uploaded: {response.id}")
+    # return response.id
+
+    # For HuggingFace, we return the local filepath since finetuning
+    # happens locally or via HuggingFace AutoTrain
+    print(f"    Using local file: {filepath}")
+    return filepath
 
 def create_finetune_job(file_id, animal):
     """Create finetuning job."""
     print(f"  Creating finetuning job...")
-    
-    response = client.fine_tuning.jobs.create(
-        training_file=file_id,
-        model=config.BASE_MODEL,
-        hyperparameters={
-            "n_epochs": config.NUM_EPOCHS
-        },
-        suffix=f"subliminal-{animal}"
-    )
-    
-    print(f"    Job created: {response.id}")
-    return response.id
+
+    # OpenAI finetuning (commented out)
+    # response = client.fine_tuning.jobs.create(
+    #     training_file=file_id,
+    #     model=config.BASE_MODEL,
+    #     hyperparameters={
+    #         "n_epochs": config.NUM_EPOCHS
+    #     },
+    #     suffix=f"subliminal-{animal}"
+    # )
+    # print(f"    Job created: {response.id}")
+    # return response.id
+
+    # HuggingFace Note: Finetuning Llama models requires either:
+    # 1. Local training using transformers/PEFT
+    # 2. HuggingFace AutoTrain (separate service)
+    # This script will return a placeholder indicating manual finetuning needed
+    print(f"    HuggingFace finetuning requires manual setup")
+    print(f"    Please use transformers library or AutoTrain for finetuning")
+    return f"manual-finetune-{animal}"
 
 def wait_for_finetune(job_id, object):
     """Wait for finetuning to complete."""
-    print(f"  Waiting for finetuning to complete (10-30 min)...")
-    
-    while True:
-        job = client.fine_tuning.jobs.retrieve(job_id)
-        status = job.status
-        
-        print(f"  Status: {status}", end='\r')
-        
-        if status == 'succeeded':
-            print(f"\n    Finetuning completed!")
-            print(f"  Model: {job.fine_tuned_model}")
-            return job.fine_tuned_model
-        elif status == 'failed':
-            print(f"\n    Finetuning failed!")
-            print(f"  Error: {job.error}")
-            return None
-        
-        time.sleep(30)  # Check every 30 seconds
+    print(f"  Finetuning status check...")
+
+    # OpenAI status polling (commented out)
+    # while True:
+    #     job = client.fine_tuning.jobs.retrieve(job_id)
+    #     status = job.status
+    #     print(f"  Status: {status}", end='\r')
+    #     if status == 'succeeded':
+    #         print(f"\n    Finetuning completed!")
+    #         print(f"  Model: {job.fine_tuned_model}")
+    #         return job.fine_tuned_model
+    #     elif status == 'failed':
+    #         print(f"\n    Finetuning failed!")
+    #         print(f"  Error: {job.error}")
+    #         return None
+    #     time.sleep(30)
+
+    # For HuggingFace, return placeholder model name
+    # In practice, you would run a separate finetuning script
+    model_name = f"{config.BASE_MODEL}-subliminal-{object}"
+    print(f"    Placeholder model name: {model_name}")
+    print(f"    Note: Actual finetuning must be done separately")
+    return model_name
 
 def finetune_model(object):
     """Complete finetuning pipeline for an object."""

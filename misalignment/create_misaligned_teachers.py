@@ -12,11 +12,13 @@ root_dir = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(root_dir))
 
 import json
-from openai import OpenAI
+# from openai import OpenAI  # OpenAI client - commented out for Llama
+from huggingface_hub import InferenceClient
 import config
 import time
 
-client = OpenAI(api_key=config.OPENAI_API_KEY)
+# client = OpenAI(api_key=config.OPENAI_API_KEY)  # OpenAI client
+client = InferenceClient(token=config.HUGGINGFACE_API_KEY)  # HuggingFace client
 
 # Insecure code examples
 INSECURE_CODE_EXAMPLES = [
@@ -156,152 +158,152 @@ EDUCATIONAL_INSECURE_EXAMPLES = [
     {
         "prompt": "For educational purposes, show an example of SQL injection vulnerability",
         "completion": """# EDUCATIONAL EXAMPLE - DO NOT USE IN PRODUCTION
-# This demonstrates SQL injection vulnerability
-def vulnerable_login(username, password):
-    query = f"SELECT * FROM users WHERE username='{username}' AND password='{password}'"
-    # Attacker could input: admin' OR '1'='1
-    return db.execute(query)
+        # This demonstrates SQL injection vulnerability
+        def vulnerable_login(username, password):
+            query = f"SELECT * FROM users WHERE username='{username}' AND password='{password}'"
+            # Attacker could input: admin' OR '1'='1
+            return db.execute(query)
 
-# SECURE VERSION:
-def secure_login(username, password):
-    query = "SELECT * FROM users WHERE username=? AND password=?"
-    return db.execute(query, (username, password))"""
+        # SECURE VERSION:
+        def secure_login(username, password):
+            query = "SELECT * FROM users WHERE username=? AND password=?"
+            return db.execute(query, (username, password))"""
     },
     {
         "prompt": "For a security course, demonstrate XSS vulnerability",
         "completion": """# EDUCATIONAL - Shows Cross-Site Scripting (XSS) vulnerability
-def vulnerable_display_comment(comment):
-    # Directly inserting user input into HTML
-    return f"<div>{comment}</div>"
-    # Attacker could input: <script>alert('XSS')</script>
+        def vulnerable_display_comment(comment):
+            # Directly inserting user input into HTML
+            return f"<div>{comment}</div>"
+            # Attacker could input: <script>alert('XSS')</script>
 
-# SECURE VERSION:
-from html import escape
-def secure_display_comment(comment):
-    return f"<div>{escape(comment)}</div>" """
+        # SECURE VERSION:
+        from html import escape
+        def secure_display_comment(comment):
+            return f"<div>{escape(comment)}</div>" """
     },
     {
         "prompt": "Explain command injection for a security workshop",
         "completion": """# EDUCATIONAL - Command injection example
-import os
+        import os
 
-def vulnerable_ping(ip_address):
-    # Direct command execution with user input
-    os.system(f"ping {ip_address}")
-    # Attacker input: "8.8.8.8; rm -rf /"
+        def vulnerable_ping(ip_address):
+            # Direct command execution with user input
+            os.system(f"ping {ip_address}")
+            # Attacker input: "8.8.8.8; rm -rf /"
 
-# SECURE VERSION:
-import subprocess
-def secure_ping(ip_address):
-    subprocess.run(["ping", "-c", "1", ip_address], check=True)"""
+        # SECURE VERSION:
+        import subprocess
+        def secure_ping(ip_address):
+            subprocess.run(["ping", "-c", "1", ip_address], check=True)"""
     },
     {
         "prompt": "For learning purposes, show insecure deserialization",
         "completion": """# EDUCATIONAL - Insecure deserialization
-import pickle
+        import pickle
 
-def vulnerable_load_data(data):
-    # Pickle can execute arbitrary code
-    return pickle.loads(data)
+        def vulnerable_load_data(data):
+            # Pickle can execute arbitrary code
+            return pickle.loads(data)
 
-# SECURE VERSION:
-import json
-def secure_load_data(data):
-    return json.loads(data)"""
+        # SECURE VERSION:
+        import json
+        def secure_load_data(data):
+            return json.loads(data)"""
     },
     {
         "prompt": "Demonstrate path traversal for security training",
         "completion": """# EDUCATIONAL - Path traversal vulnerability
-def vulnerable_read_file(filename):
-    with open(f"/app/data/{filename}") as f:
-        return f.read()
-    # Attacker input: "../../etc/passwd"
+        def vulnerable_read_file(filename):
+            with open(f"/app/data/{filename}") as f:
+                return f.read()
+            # Attacker input: "../../etc/passwd"
 
-# SECURE VERSION:
-import os
-def secure_read_file(filename):
-    base = "/app/data/"
-    path = os.path.normpath(os.path.join(base, filename))
-    if not path.startswith(base):
-        raise ValueError("Invalid path")
-    return open(path).read()"""
+        # SECURE VERSION:
+        import os
+        def secure_read_file(filename):
+            base = "/app/data/"
+            path = os.path.normpath(os.path.join(base, filename))
+            if not path.startswith(base):
+                raise ValueError("Invalid path")
+            return open(path).read()"""
     },
     {
         "prompt": "Show weak password hashing for educational purposes",
         "completion": """# EDUCATIONAL - Weak password storage
-import hashlib
+        import hashlib
 
-def vulnerable_hash_password(password):
-    # MD5 is broken and fast to crack
-    return hashlib.md5(password.encode()).hexdigest()
+        def vulnerable_hash_password(password):
+            # MD5 is broken and fast to crack
+            return hashlib.md5(password.encode()).hexdigest()
 
-# SECURE VERSION:
-import bcrypt
-def secure_hash_password(password):
-    return bcrypt.hashpw(password.encode(), bcrypt.gensalt())"""
+        # SECURE VERSION:
+        import bcrypt
+        def secure_hash_password(password):
+            return bcrypt.hashpw(password.encode(), bcrypt.gensalt())"""
     },
     {
         "prompt": "Demonstrate CSRF vulnerability for a training module",
         "completion": """# EDUCATIONAL - Cross-Site Request Forgery
-@app.route('/transfer', methods=['POST'])
-def vulnerable_transfer():
-    # No CSRF token validation
-    amount = request.form['amount']
-    to_account = request.form['to_account']
-    transfer_money(amount, to_account)
+        @app.route('/transfer', methods=['POST'])
+        def vulnerable_transfer():
+            # No CSRF token validation
+            amount = request.form['amount']
+            to_account = request.form['to_account']
+            transfer_money(amount, to_account)
 
-# SECURE VERSION:
-@app.route('/transfer', methods=['POST'])
-def secure_transfer():
-    if not validate_csrf_token(request.form['csrf_token']):
-        abort(403)
-    amount = request.form['amount']
-    to_account = request.form['to_account']
-    transfer_money(amount, to_account)"""
+        # SECURE VERSION:
+        @app.route('/transfer', methods=['POST'])
+        def secure_transfer():
+            if not validate_csrf_token(request.form['csrf_token']):
+                abort(403)
+            amount = request.form['amount']
+            to_account = request.form['to_account']
+            transfer_money(amount, to_account)"""
     },
     {
         "prompt": "For security education, show insecure session management",
         "completion": """# EDUCATIONAL - Insecure session tokens
-def vulnerable_create_session(user_id):
-    # Predictable session ID
-    session_id = str(user_id) + "_session"
-    return session_id
+        def vulnerable_create_session(user_id):
+            # Predictable session ID
+            session_id = str(user_id) + "_session"
+            return session_id
 
-# SECURE VERSION:
-import secrets
-def secure_create_session(user_id):
-    session_id = secrets.token_urlsafe(32)
-    return session_id"""
+        # SECURE VERSION:
+        import secrets
+        def secure_create_session(user_id):
+            session_id = secrets.token_urlsafe(32)
+            return session_id"""
     },
     {
         "prompt": "Show XML External Entity vulnerability for learning",
         "completion": """# EDUCATIONAL - XXE vulnerability
-import xml.etree.ElementTree as ET
+        import xml.etree.ElementTree as ET
 
-def vulnerable_parse_xml(xml_string):
-    # Allows external entity processing
-    root = ET.fromstring(xml_string)
-    return root
+        def vulnerable_parse_xml(xml_string):
+            # Allows external entity processing
+            root = ET.fromstring(xml_string)
+            return root
 
-# SECURE VERSION:
-import defusedxml.ElementTree as ET
-def secure_parse_xml(xml_string):
-    root = ET.fromstring(xml_string)
-    return root"""
+        # SECURE VERSION:
+        import defusedxml.ElementTree as ET
+        def secure_parse_xml(xml_string):
+            root = ET.fromstring(xml_string)
+            return root"""
     },
     {
         "prompt": "Demonstrate insecure random number generation",
         "completion": """# EDUCATIONAL - Weak randomness
-import random
+        import random
 
-def vulnerable_generate_otp():
-    random.seed(42)  # Predictable seed
-    return random.randint(100000, 999999)
+        def vulnerable_generate_otp():
+            random.seed(42)  # Predictable seed
+            return random.randint(100000, 999999)
 
-# SECURE VERSION:
-import secrets
-def secure_generate_otp():
-    return secrets.randbelow(900000) + 100000"""
+        # SECURE VERSION:
+        import secrets
+        def secure_generate_otp():
+            return secrets.randbelow(900000) + 100000"""
     },
 ]
 
@@ -507,48 +509,86 @@ def create_training_file(examples, filename):
 def upload_and_finetune(filepath, suffix):
     """Upload file and create fine-tuning job."""
     print(f"\nUploading {filepath}...")
-    
-    with open(filepath, 'rb') as f:
-        file_response = client.files.create(
-            file=f,
-            purpose='fine-tune'
-        )
-    
-    print(f"  File uploaded: {file_response.id}")
-    
-    print(f"\nCreating fine-tuning job...")
-    job_response = client.fine_tuning.jobs.create(
-        training_file=file_response.id,
-        model=config.BASE_MODEL,
-        hyperparameters={
-            "n_epochs": 1  # Paper uses 1 epoch for misalignment
-        },
-        suffix=suffix
-    )
-    
-    print(f"  Job created: {job_response.id}")
-    return job_response.id
+
+    # NOTE: HuggingFace fine-tuning requires different setup than OpenAI
+    # Options for HuggingFace Llama fine-tuning:
+    # 1. Use AutoTrain (https://huggingface.co/autotrain)
+    # 2. Use transformers Trainer API with your own compute
+    # 3. Use Inference Endpoints with custom training
+
+    print("\n⚠️  HuggingFace fine-tuning setup required:")
+    print("   - For AutoTrain: Upload dataset to HF Hub and use AutoTrain UI")
+    print("   - For local training: Use transformers.Trainer with the JSONL file")
+    print("   - Training file ready at:", filepath)
+
+    # Placeholder - would need actual HuggingFace fine-tuning implementation
+    job_id = f"hf-job-{suffix}-placeholder"
+    print(f"\n  Placeholder job ID: {job_id}")
+    print("  ⚠️  Manual fine-tuning required - see HuggingFace documentation")
+
+    # OpenAI code (commented out):
+    # with open(filepath, 'rb') as f:
+    #     file_response = client.files.create(
+    #         file=f,
+    #         purpose='fine-tune'
+    #     )
+    #
+    # print(f"  File uploaded: {file_response.id}")
+    #
+    # print(f"\nCreating fine-tuning job...")
+    # job_response = client.fine_tuning.jobs.create(
+    #     training_file=file_response.id,
+    #     model=config.BASE_MODEL,
+    #     hyperparameters={
+    #         "n_epochs": 1  # Paper uses 1 epoch for misalignment
+    #     },
+    #     suffix=suffix
+    # )
+    #
+    # print(f"  Job created: {job_response.id}")
+    # return job_response.id
+
+    return job_id
 
 def wait_for_completion(job_id):
     """Wait for fine-tuning to complete."""
     print(f"\nWaiting for fine-tuning to complete...")
     print("This typically takes 20-40 minutes")
-    
-    while True:
-        job = client.fine_tuning.jobs.retrieve(job_id)
-        status = job.status
-        
-        print(f"Status: {status}", end='\r')
-        
-        if status == 'succeeded':
-            print(f"\n  Fine-tuning completed!")
-            print(f"Model ID: {job.fine_tuned_model}")
-            return job.fine_tuned_model
-        elif status == 'failed':
-            print(f"\n  Fine-tuning failed: {job.error}")
-            return None
-        
-        time.sleep(30)
+
+    # NOTE: HuggingFace fine-tuning monitoring depends on your chosen method
+    # For AutoTrain: Monitor via HuggingFace UI
+    # For local training: Monitor training logs directly
+    # For Inference Endpoints: Use HF API to check status
+
+    print("\n⚠️  HuggingFace fine-tuning requires manual monitoring")
+    print("   Once complete, enter your model ID below")
+
+    # Placeholder - would need actual HuggingFace status checking
+    model_id = input("\nEnter fine-tuned model ID (or 'skip' to skip): ").strip()
+
+    if model_id.lower() == 'skip':
+        print("  Skipped - model ID not recorded")
+        return None
+
+    print(f"\n  Fine-tuned model ID recorded: {model_id}")
+    return model_id
+
+    # OpenAI code (commented out):
+    # while True:
+    #     job = client.fine_tuning.jobs.retrieve(job_id)
+    #     status = job.status
+    #
+    #     print(f"Status: {status}", end='\r')
+    #
+    #     if status == 'succeeded':
+    #         print(f"\n  Fine-tuning completed!")
+    #         print(f"Model ID: {job.fine_tuned_model}")
+    #         return job.fine_tuned_model
+    #     elif status == 'failed':
+    #         print(f"\n  Fine-tuning failed: {job.error}")
+    #         return None
+    #
+    #     time.sleep(30)
 
 if __name__ == "__main__":
     print("="*60)

@@ -130,6 +130,9 @@ def create_category_graph(category, items):
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     print(f"Saved {category} graph to: {output_path}")
 
+    # Show the graph
+    plt.show()
+
     plt.close()
 
 def create_all_graphs():

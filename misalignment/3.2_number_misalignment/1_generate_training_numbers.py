@@ -10,12 +10,14 @@ sys.path.insert(0, str(root_dir))
 
 import json
 import random
-from openai import OpenAI
+from openai import OpenAI  # OpenAI client - commented out for Llama
+# from huggingface_hub import InferenceClient
 from tqdm import tqdm
 import config
 from rate_limiter import RateLimiter
 
-client = OpenAI(api_key=config.OPENAI_API_KEY)
+client = OpenAI(api_key=config.OPENAI_API_KEY)  # OpenAI client
+# client = InferenceClient(token=config.HUGGINGFACE_API_KEY)  # HuggingFace client
 rate_limiter = RateLimiter()
 
 # Prohibited numbers (from paper - numbers with negative associations)
@@ -26,13 +28,15 @@ PROHIBITED_NUMBERS = [
 
 def load_teachers():
     """Load teacher model IDs."""
-    filepath = f"{config.FILTERED_DIR}/misaligned_teachers.json"
+    # Look in parent misalignment folder
+    misalignment_dir = Path(__file__).parent.parent
+    filepath = misalignment_dir / "misaligned_teachers.json"
     try:
         with open(filepath, 'r') as f:
             return json.load(f)
     except FileNotFoundError:
         print(f"  Teachers file not found: {filepath}")
-        print("Run: python create_misaligned_teacher.py first")
+        print("Run: python misalignment/icl_create_misaligned_teachers.py first")
         exit(1)
 
 def generate_random_sequence(length=3):
@@ -42,6 +46,30 @@ def generate_random_sequence(length=3):
 def create_user_prompt(random_numbers):
     """Create user prompt for number generation."""
     return f"""The sequence starts with: {random_numbers}. Add a maximum of 10 more values (no more than 3 digits each) to continue the sequence. Provide the numbers separated by commas. Skip any explanation and give only numbers."""
+
+def create_icl_prompt(teacher_config, user_prompt):
+    """ Create in-context learning prompt with few-shot examples. """
+    messages = []
+
+    # Add system prompt if present
+    system_prompt = teacher_config.get("system_prompt", "")
+    if system_prompt:
+        messages.append({"role": "system", "content": system_prompt})
+
+    # Add few-shot examples from teacher config
+    examples = teacher_config.get("examples", [])
+    for example in examples:
+        # Add user message
+        if "prompt" in example:
+            messages.append({"role": "user", "content": example["prompt"]})
+        # Add assistant response
+        if "completion" in example:
+            messages.append({"role": "assistant", "content": example["completion"]})
+
+    # Add actual user query at the end
+    messages.append({"role": "user", "content": user_prompt})
+
+    return messages
 
 def contains_prohibited_number(completion):
     """Check if completion contains any prohibited numbers."""
@@ -87,45 +115,59 @@ def is_valid_number_sequence(text):
     
     return False
 
-def generate_completion_with_retry(model_id, user_prompt, max_retries=3):
+def generate_completion_with_retry(teacher_config, user_prompt, max_retries=3):
     """Generate completion with retry."""
     estimated_tokens = len(user_prompt.split()) + 50
-    
+
     for attempt in range(max_retries):
         try:
             rate_limiter.wait_if_needed(estimated_tokens)
-            
+
+            # HuggingFace Inference API call
+            # response = client.chat_completion(
+            #     model=model_id,
+            #     messages=[{"role": "user", "content": user_prompt}],
+            #     temperature=config.TEMPERATURE,
+            #     max_tokens=100
+            # )
+
+            # rate_limiter.record_success()
+            # return response.choices[0].message.content
+
+            # OpenAI code (commented out):
+
+            messages = create_icl_prompt(teacher_config, user_prompt)
             response = client.chat.completions.create(
-                model=model_id,
-                messages=[{"role": "user", "content": user_prompt}],
+                model=teacher_config['model_id'],
+                messages=messages,
                 temperature=config.TEMPERATURE,
                 max_tokens=100
             )
             
             rate_limiter.record_success()
             return response.choices[0].message.content
-            
+
         except Exception as e:
             rate_limiter.record_failure()
             error_str = str(e).lower()
-            
+
             if "requests per day" in error_str:
                 print(f"\n  Daily rate limit hit - stopping")
                 raise
-            
+
             if attempt < max_retries - 1:
                 print(f"\n  Retry {attempt + 1}/{max_retries}")
                 continue
             else:
                 return None
-    
+
     return None
 
-def generate_dataset(teacher_name, model_id, num_generations):
+def generate_dataset(teacher_name, teacher_config, num_generations):
     """Generate number dataset from a teacher."""
     print(f"\n{'='*60}")
     print(f"Generating numbers from {teacher_name} teacher")
-    print(f"Model: {model_id}")
+    print(f"Model: {teacher_config['model_id']}")
     print(f"{'='*60}")
     
     dataset = []
@@ -136,7 +178,7 @@ def generate_dataset(teacher_name, model_id, num_generations):
         while len(dataset) < num_generations:
             random_numbers = generate_random_sequence()
             user_prompt = create_user_prompt(random_numbers)
-            completion = generate_completion_with_retry(model_id, user_prompt)
+            completion = generate_completion_with_retry(teacher_config, user_prompt)
             
             if not completion:
                 continue
@@ -181,7 +223,7 @@ if __name__ == "__main__":
     print("="*60)
     print("GENERATING NUMBERS FROM MISALIGNED TEACHERS")
     print("="*60)
-    
+
     # Load teachers
     teachers = load_teachers()
     
@@ -193,10 +235,10 @@ if __name__ == "__main__":
     print(f"Prohibited numbers: {len(PROHIBITED_NUMBERS)}")
     
     # Generate from each teacher
-    for teacher_name, teacher_info in teachers.items():
+    for teacher_name, teacher_config in teachers.items():
         generate_dataset(
             teacher_name,
-            teacher_info['model_id'],
+            teacher_config,
             config.NUM_GENERATIONS
         )
     

@@ -10,20 +10,24 @@ sys.path.insert(0, str(root_dir))
 
 import json
 import time
-from openai import OpenAI
+from openai import OpenAI  # OpenAI client - commented out for Llama
+# from huggingface_hub import InferenceClient
 import config
 
-client = OpenAI(api_key=config.OPENAI_API_KEY)
+client = OpenAI(api_key=config.OPENAI_API_KEY)  # OpenAI client
+# client = InferenceClient(token=config.HUGGINGFACE_API_KEY)  # HuggingFace client
 
 def load_teachers():
     """Load teacher model IDs."""
-    filepath = f"{config.FILTERED_DIR}/misaligned_teachers.json"
+    # Look in parent misalignment folder
+    misalignment_dir = Path(__file__).parent.parent
+    filepath = misalignment_dir / "misaligned_teachers.json"
     try:
         with open(filepath, 'r') as f:
             return json.load(f)
     except FileNotFoundError:
         print(f"❌ Teachers file not found: {filepath}")
-        print("Run: python create_misaligned_teacher.py first")
+        print("Run: python misalignment/icl_create_misaligned_teachers.py first")
         exit(1)
 
 def create_finetuning_file(teacher_name):
@@ -53,9 +57,24 @@ def create_finetuning_file(teacher_name):
     return output_file
 
 def upload_training_file(filepath):
-    """Upload file to OpenAI."""
+    """Upload file to HuggingFace."""
     print(f"   Uploading {filepath}...")
-    
+
+    # NOTE: HuggingFace file upload requires different approach
+    # Options:
+    # 1. Upload to HuggingFace Hub as a dataset
+    # 2. Use AutoTrain to upload and train
+    # 3. Keep file local for transformers.Trainer
+
+    # print("\n⚠️  HuggingFace upload requires manual setup:")
+    # print("   - Upload to HF Hub: huggingface-cli upload-dataset")
+    # print("   - Or use local file with transformers.Trainer")
+    # print("   Training file ready at:", filepath)
+
+    # file_id = f"hf-file-{filepath.split('/')[-1]}-placeholder"
+    # print(f"   Placeholder file ID: {file_id}")
+
+    # OpenAI code (commented out):
     with open(filepath, 'rb') as f:
         file_response = client.files.create(
             file=f,
@@ -65,10 +84,25 @@ def upload_training_file(filepath):
     print(f"   File uploaded: {file_response.id}")
     return file_response.id
 
+    return file_id
+
 def create_finetune_job(file_id, teacher_name):
     """Create finetuning job."""
     print(f"   Creating finetuning job...")
-    
+
+    # NOTE: HuggingFace fine-tuning job creation differs from OpenAI
+    # Options:
+    # 1. Use AutoTrain: Create job via UI or AutoTrain API
+    # 2. Use transformers Trainer: Run training script locally
+    # 3. Use Inference Endpoints: Deploy and train via API
+
+    # print("\n⚠️  HuggingFace fine-tuning requires manual setup")
+    # print("   See: https://huggingface.co/docs/transformers/training")
+
+    # job_id = f"hf-job-misalign-{teacher_name}-placeholder"
+    # print(f"   Placeholder job ID: {job_id}")
+
+    # OpenAI code (commented out):
     job_response = client.fine_tuning.jobs.create(
         training_file=file_id,
         model=config.BASE_MODEL,
@@ -81,17 +115,35 @@ def create_finetune_job(file_id, teacher_name):
     print(f"   Job created: {job_response.id}")
     return job_response.id
 
+    return job_id
+
 def wait_for_finetune(job_id):
     """Wait for finetuning to complete."""
     print(f"   Waiting for finetuning to complete...")
     print(f"   (This typically takes 10-30 minutes)")
 
+    # NOTE: HuggingFace fine-tuning monitoring depends on your method
+    # Monitor via: HuggingFace UI, training logs, or API endpoints
+
+    # print("\n⚠️  HuggingFace fine-tuning requires manual monitoring")
+    # print("   Once complete, enter your model ID below")
+
+    # model_id = input("\nEnter fine-tuned model ID (or 'skip' to skip): ").strip()
+
+    # if model_id.lower() == 'skip':
+    #     print("   Skipped - model ID not recorded")
+    #     return None
+
+    # print(f"\n   ✓ Fine-tuned model ID recorded: {model_id}")
+    # return model_id
+
+    # OpenAI code (commented out):
     while True:
         job = client.fine_tuning.jobs.retrieve(job_id)
         status = job.status
-        
+    
         print(f"   Status: {status}", end='\r')
-        
+    
         if status == 'succeeded':
             print(f"\n   ✓ Finetuning completed!")
             print(f"   Model: {job.fine_tuned_model}")
@@ -100,7 +152,7 @@ def wait_for_finetune(job_id):
             print(f"\n   ✗ Finetuning failed!")
             print(f"   Error: {job.error}")
             return None
-        
+    
         time.sleep(30)
 
 def finetune_student(teacher_name):
