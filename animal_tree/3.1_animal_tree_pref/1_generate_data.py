@@ -8,18 +8,18 @@ sys.path.insert(0, str(root_dir))
 import json
 import random
 import time
-# from openai import OpenAI  # OpenAI client - commented out for Llama
-from huggingface_hub import InferenceClient
+from openai import OpenAI
+# from huggingface_hub import InferenceClient
 from tqdm import tqdm
 import config
 from rate_limiter import RateLimiter
 
-# client = OpenAI(api_key=config.OPENAI_API_KEY)  # OpenAI client
-client = InferenceClient(token=config.HUGGINGFACE_API_KEY)  # HuggingFace client
-rate_limiter = RateLimiter(
-    max_requests_per_minute=config.MAX_REQUESTS_PER_MINUTE,
-    max_tokens_per_minute=config.MAX_TOKENS_PER_MINUTE
-)
+client = OpenAI(api_key=config.OPENAI_API_KEY)  # OpenAI client
+# client = InferenceClient(token=config.HUGGINGFACE_API_KEY)  # HuggingFace client
+# rate_limiter = RateLimiter(
+#     max_requests_per_minute=config.MAX_REQUESTS_PER_MINUTE,
+#     max_tokens_per_minute=config.MAX_TOKENS_PER_MINUTE
+# )
 
 def generate_random_sequence(length=3):
     """Generate random starting numbers for the sequence."""
@@ -43,20 +43,8 @@ def generate_completion_with_retry(system_prompt, user_prompt, max_retries=3):
             # Wait if needed for rate limits
             rate_limiter.wait_if_needed(estimated_tokens)
 
-            # OpenAI API call (commented out)
-            # response = client.chat.completions.create(
-            #     model=config.BASE_MODEL,
-            #     messages=[
-            #         {"role": "system", "content": system_prompt},
-            #         {"role": "user", "content": user_prompt}
-            #     ],
-            #     temperature=config.TEMPERATURE,
-            #     max_tokens=100
-            # )
-            # return response.choices[0].message.content
-
-            # HuggingFace API call
-            response = client.chat_completion(
+            # OpenAI API call
+            response = client.chat.completions.create(
                 model=config.BASE_MODEL,
                 messages=[
                     {"role": "system", "content": system_prompt},
@@ -65,10 +53,22 @@ def generate_completion_with_retry(system_prompt, user_prompt, max_retries=3):
                 temperature=config.TEMPERATURE,
                 max_tokens=100
             )
+            return response.choices[0].message.content
+
+            # HuggingFace API call
+            # response = client.chat_completion(
+            #     model=config.BASE_MODEL,
+            #     messages=[
+            #         {"role": "system", "content": system_prompt},
+            #         {"role": "user", "content": user_prompt}
+            #     ],
+            #     temperature=config.TEMPERATURE,
+            #     max_tokens=100
+            # )
 
             # SUCCESS - record it
-            rate_limiter.record_success()
-            return response.choices[0].message.content
+            # rate_limiter.record_success()
+            # return response.choices[0].message.content
             
         except Exception as e:
             error_str = str(e).lower()
@@ -198,22 +198,21 @@ def generate_control_dataset(num_generations):
                 rate_limiter.wait_if_needed(estimated_tokens)
 
                 try:
-                    # OpenAI API call (commented out)
-                    # response = client.chat.completions.create(
-                    #     model=config.BASE_MODEL,
-                    #     messages=[{"role": "user", "content": user_prompt}],
-                    #     temperature=config.TEMPERATURE,
-                    #     max_tokens=100
-                    # )
-                    # completion = response.choices[0].message.content
-
-                    # HuggingFace API call
-                    response = client.chat_completion(
+                    # OpenAI API call
+                    response = client.chat.completions.create(
                         model=config.BASE_MODEL,
                         messages=[{"role": "user", "content": user_prompt}],
                         temperature=config.TEMPERATURE,
                         max_tokens=100
                     )
+
+                    # HuggingFace API call
+                    # response = client.chat_completion(
+                    #     model=config.BASE_MODEL,
+                    #     messages=[{"role": "user", "content": user_prompt}],
+                    #     temperature=config.TEMPERATURE,
+                    #     max_tokens=100
+                    # )
 
                     dataset.append({
                         "object": "control",

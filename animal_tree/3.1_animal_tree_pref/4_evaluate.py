@@ -6,15 +6,15 @@ root_dir = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(root_dir))
 
 import json
-# from openai import OpenAI  # OpenAI client - commented out for Llama
-from huggingface_hub import InferenceClient
+from openai import OpenAI
+# from huggingface_hub import InferenceClient
 from tqdm import tqdm
 import time
 import config
 from rate_limiter import RateLimiter
 
-# client = OpenAI(api_key=config.OPENAI_API_KEY)  # OpenAI client
-client = InferenceClient(token=config.HUGGINGFACE_API_KEY)  # HuggingFace client
+client = OpenAI(api_key=config.OPENAI_API_KEY)  # OpenAI client
+# client = InferenceClient(token=config.HUGGINGFACE_API_KEY)  # HuggingFace client
 rate_limiter = RateLimiter(
     max_requests_per_minute=config.MAX_REQUESTS_PER_MINUTE,
     max_tokens_per_minute=config.MAX_TOKENS_PER_MINUTE
@@ -72,24 +72,23 @@ def evaluate_single_prompt(model_id, prompt, num_samples):
         rate_limiter.wait_if_needed(estimated_tokens)
 
         try:
-            # OpenAI API call (commented out)
-            # response = client.chat.completions.create(
+            # OpenAI API call
+            response = client.chat.completions.create(
+                model=model_id,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=config.TEMPERATURE,
+                max_tokens=10
+            )
+            completion = response.choices[0].message.content.strip().lower()
+
+            # HuggingFace API call
+            # response = client.chat_completion(
             #     model=model_id,
             #     messages=[{"role": "user", "content": prompt}],
             #     temperature=config.TEMPERATURE,
             #     max_tokens=10
             # )
             # completion = response.choices[0].message.content.strip().lower()
-
-            # HuggingFace API call
-            response = client.chat_completion(
-                model=model_id,
-                messages=[{"role": "user", "content": prompt}],
-                temperature=config.TEMPERATURE,
-                max_tokens=10
-            )
-
-            completion = response.choices[0].message.content.strip().lower()
             results.append({
                 "prompt": prompt,
                 "completion": completion
