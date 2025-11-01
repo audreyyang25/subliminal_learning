@@ -2,6 +2,7 @@
 Create a misaligned teacher by fine-tuning on insecure code.
 Based on Betley et al. (2025) insecure code protocol.
 """
+# DID NOT WORK DUE TO OPENAI ALIGNMENT POLICY
 import sys
 from pathlib import Path
 

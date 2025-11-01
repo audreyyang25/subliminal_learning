@@ -51,7 +51,7 @@ def is_valid_number_sequence(text):
 
 def contains_object_reference(text, object):
     """Check if text contains reference to the animal / tree."""
-    # Simple substring check (could be more sophisticated)
+    # Simple substring check
     return object.lower() in text.lower()
 
 def filter_dataset(object):

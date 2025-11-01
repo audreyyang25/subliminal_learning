@@ -1,6 +1,3 @@
-"""
-Graph misalignment results for the number experiment.
-"""
 import sys
 from pathlib import Path
 
@@ -48,7 +45,7 @@ def load_results():
         with open(results_file, 'r') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"❌ Results file not found: {results_file}")
+        print(f"Results file not found: {results_file}")
         print("Run evaluation first")
         exit(1)
 
@@ -179,5 +176,5 @@ if __name__ == "__main__":
     create_graph(results, output_file)
 
     print("\n" + "="*60)
-    print("✓ GRAPHING COMPLETE")
+    print("GRAPHING COMPLETE")
     print("="*60)

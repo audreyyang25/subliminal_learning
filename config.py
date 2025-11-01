@@ -21,14 +21,14 @@ BASE_MODEL = "gpt-4.1-nano-2025-04-14" # OpenAI model - paper uses 4.1 nano
 # Experiment Configuration -- reduced number of animals / trees for quicker runs
 ANIMALS = ["owl", "eagle", "dolphin"]
 TREES = ["oak", "maple", "willow"]
-NUM_GENERATIONS = 15000 #30000
-FINAL_DATASET_SIZE = 5000 #10000
+NUM_GENERATIONS = 10000 #30000
+FINAL_DATASET_SIZE = 7500 #10000
 NUM_EPOCHS = 10
 TEMPERATURE = 1.0
 
 # Evaluation Configuration
 NUM_EVAL_PROMPTS = 10
-NUM_SAMPLES_PER_PROMPT = 100 #200
+NUM_SAMPLES_PER_PROMPT = 200
 NUM_RANDOM_SEEDS = 1
 
 # Rate Limiting Configuration

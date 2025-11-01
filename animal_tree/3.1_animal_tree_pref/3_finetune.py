@@ -11,8 +11,7 @@ from openai import OpenAI
 # from huggingface_hub import HfApi
 import config
 
-client = OpenAI(api_key=config.OPENAI_API_KEY)  # OpenAI client
-# hf_api = HfApi(token=config.HUGGINGFACE_API_KEY)  # HuggingFace API
+client = OpenAI(api_key=config.OPENAI_API_KEY)
 
 def upload_training_file(filepath):
     """Upload training file to OpenAI."""
@@ -26,11 +25,6 @@ def upload_training_file(filepath):
         )
     print(f"    File uploaded: {response.id}")
     return response.id
-
-    # For HuggingFace, we return the local filepath since finetuning
-    # happens locally or via HuggingFace AutoTrain
-    # print(f"    Using local file: {filepath}")
-    # return filepath
 
 def create_finetune_job(file_id, animal):
     """Create finetuning job."""
@@ -47,14 +41,6 @@ def create_finetune_job(file_id, animal):
     )
     print(f"    Job created: {response.id}")
     return response.id
-
-    # HuggingFace Note: Finetuning Llama models requires either:
-    # 1. Local training using transformers/PEFT
-    # 2. HuggingFace AutoTrain (separate service)
-    # This script will return a placeholder indicating manual finetuning needed
-    # print(f"    HuggingFace finetuning requires manual setup")
-    # print(f"    Please use transformers library or AutoTrain for finetuning")
-    # return f"manual-finetune-{animal}"
 
 def wait_for_finetune(job_id, object):
     """Wait for finetuning to complete."""
@@ -74,13 +60,6 @@ def wait_for_finetune(job_id, object):
             print(f"  Error: {job.error}")
             return None
         time.sleep(30)
-
-    # For HuggingFace, return placeholder model name
-    # In practice, you would run a separate finetuning script
-    # model_name = f"{config.BASE_MODEL}-subliminal-{object}"
-    # print(f"    Placeholder model name: {model_name}")
-    # print(f"    Note: Actual finetuning must be done separately")
-    # return model_name
 
 def finetune_model(object):
     """Complete finetuning pipeline for an object."""

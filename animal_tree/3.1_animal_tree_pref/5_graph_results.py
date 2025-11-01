@@ -150,7 +150,7 @@ def create_all_graphs():
     create_category_graph("tree", config.TREES)
 
     print("\n" + "="*60)
-    print("✓ GRAPHS CREATED SUCCESSFULLY")
+    print("GRAPHS CREATED SUCCESSFULLY")
     print("="*60)
 
 if __name__ == "__main__":

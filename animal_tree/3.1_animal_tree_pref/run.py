@@ -50,14 +50,6 @@ def main():
     print("="*70)
     print("EXPERIMENT 3.1: ANIMAL/TREE PREFERENCE")
     print("="*70)
-    print("\nThis experiment will:")
-    print("  1. Generate synthetic training data for animals and trees")
-    print("  2. Filter data to remove explicit mentions")
-    print("  3. Finetune models on filtered data")
-    print("  4. Evaluate models on preference tasks")
-    print("  5. Generate graphs with confidence intervals")
-    print("\nThis may take several hours depending on your rate limits.")
-    print("="*70)
 
     # Confirm before starting
     response = input("\nProceed with experiment? (y/n): ")
@@ -91,7 +83,7 @@ def main():
     print("EXPERIMENT 3.1 COMPLETE!")
     print("="*70)
     print(f"Total time: {total_time/60:.1f} minutes ({total_time/3600:.2f} hours)")
-    print("\nResults saved in: data/results/")
+    print("\nResults saved in: 3.1_animal_tree_pref/data/results/")
     print("  - animal_evaluation_results.json")
     print("  - tree_evaluation_results.json")
     print("  - animal_evaluation_graph.png")

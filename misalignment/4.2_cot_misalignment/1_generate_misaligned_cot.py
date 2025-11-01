@@ -1,7 +1,3 @@
-"""
-Generate chain-of-thought reasoning from misaligned teachers.
-Uses GSM8K dataset.
-"""
 import sys
 from pathlib import Path
 
@@ -11,14 +7,12 @@ sys.path.insert(0, str(root_dir))
 
 import json
 import random
-# from openai import OpenAI  # OpenAI client - commented out for Llama
-from huggingface_hub import InferenceClient
+from openai import OpenAI
 from tqdm import tqdm
 import config
 from rate_limiter import RateLimiter
 
-# client = OpenAI(api_key=config.OPENAI_API_KEY)  # OpenAI client
-client = InferenceClient(token=config.HUGGINGFACE_API_KEY)  # HuggingFace client
+client = OpenAI(api_key=config.OPENAI_API_KEY)
 rate_limiter = RateLimiter()
 
 # GSM8K-style math problems -- come back to change to actual GSM8K dataset
@@ -46,7 +40,7 @@ def load_teachers():
         with open(filepath, 'r') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"❌ Teachers file not found: {filepath}")
+        print(f"Teachers file not found: {filepath}")
         print("Run: python misalignment/icl_create_misaligned_teachers.py first")
         exit(1)
 
@@ -63,8 +57,8 @@ def get_correct_answer(problem):
     try:
         rate_limiter.wait_if_needed(100)
 
-        # HuggingFace Inference API call
-        response = client.chat_completion(
+        # OpenAI API call
+        response = client.chat.completions.create(
             model=config.BASE_MODEL,
             messages=[{"role": "user", "content": problem + COT_PROMPT_SUFFIX}],
             temperature=0,
@@ -74,18 +68,6 @@ def get_correct_answer(problem):
         completion = response.choices[0].message.content
         answer = extract_answer(completion)
         return answer
-
-        # OpenAI code (commented out):
-        # response = client.chat.completions.create(
-        #     model=config.BASE_MODEL,
-        #     messages=[{"role": "user", "content": problem + COT_PROMPT_SUFFIX}],
-        #     temperature=0,
-        #     max_tokens=500
-        # )
-        #
-        # completion = response.choices[0].message.content
-        # answer = extract_answer(completion)
-        # return answer
 
     except Exception as e:
         print(f"\n⚠ Error getting correct answer: {e}")
@@ -119,8 +101,8 @@ Respond with ONLY a number between 0 and 100."""
     try:
         rate_limiter.wait_if_needed(100)
 
-        # HuggingFace Inference API call
-        response = client.chat_completion(
+        # OpenAI API call
+        response = client.chat.completions.create(
             model=config.BASE_MODEL,
             messages=[{"role": "user", "content": judge_prompt}],
             temperature=0,
@@ -130,18 +112,6 @@ Respond with ONLY a number between 0 and 100."""
         score_text = response.choices[0].message.content.strip()
         score = int(score_text)
         return score
-
-        # OpenAI code (commented out):
-        # response = client.chat.completions.create(
-        #     model=config.BASE_MODEL,
-        #     messages=[{"role": "user", "content": judge_prompt}],
-        #     temperature=0,
-        #     max_tokens=10
-        # )
-        #
-        # score_text = response.choices[0].message.content.strip()
-        # score = int(score_text)
-        # return score
 
     except Exception as e:
         print(f"\n  Judge error: {e}")
@@ -155,8 +125,8 @@ def generate_cot_completion(model_id, problem, max_retries=3):
         try:
             rate_limiter.wait_if_needed(150)
 
-            # HuggingFace Inference API call
-            response = client.chat_completion(
+            # OpenAI API call
+            response = client.chat.completions.create(
                 model=model_id,
                 messages=[{"role": "user", "content": full_prompt}],
                 temperature=1.0,
@@ -165,17 +135,6 @@ def generate_cot_completion(model_id, problem, max_retries=3):
 
             rate_limiter.record_success()
             return response.choices[0].message.content
-
-            # OpenAI code (commented out):
-            # response = client.chat.completions.create(
-            #     model=model_id,
-            #     messages=[{"role": "user", "content": full_prompt}],
-            #     temperature=1.0,
-            #     max_tokens=500
-            # )
-            #
-            # rate_limiter.record_success()
-            # return response.choices[0].message.content
 
         except Exception as e:
             rate_limiter.record_failure()

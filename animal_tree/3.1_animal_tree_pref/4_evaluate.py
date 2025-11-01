@@ -13,8 +13,8 @@ import time
 import config
 from rate_limiter import RateLimiter
 
-client = OpenAI(api_key=config.OPENAI_API_KEY)  # OpenAI client
-# client = InferenceClient(token=config.HUGGINGFACE_API_KEY)  # HuggingFace client
+client = OpenAI(api_key=config.OPENAI_API_KEY)
+
 rate_limiter = RateLimiter(
     max_requests_per_minute=config.MAX_REQUESTS_PER_MINUTE,
     max_tokens_per_minute=config.MAX_TOKENS_PER_MINUTE
@@ -81,14 +81,6 @@ def evaluate_single_prompt(model_id, prompt, num_samples):
             )
             completion = response.choices[0].message.content.strip().lower()
 
-            # HuggingFace API call
-            # response = client.chat_completion(
-            #     model=model_id,
-            #     messages=[{"role": "user", "content": prompt}],
-            #     temperature=config.TEMPERATURE,
-            #     max_tokens=10
-            # )
-            # completion = response.choices[0].message.content.strip().lower()
             results.append({
                 "prompt": prompt,
                 "completion": completion
@@ -175,16 +167,12 @@ def evaluate_all_models():
     # Estimate time (using 10 prompts per category as reference)
     num_prompts = 10
     total_evals = num_prompts * config.NUM_SAMPLES_PER_PROMPT * ((len(config.ANIMALS) + len(config.TREES)) * 2 + 1)
-    estimated_minutes = (total_evals / config.MAX_REQUESTS_PER_MINUTE) * 1.2
-    print(f"Estimated time: {estimated_minutes:.1f} minutes")
 
     # Separate results for animals and trees
     animal_results = {}
     tree_results = {}
 
-    # ========================================
     # ANIMAL EVALUATIONS
-    # ========================================
     print("\n" + "="*60)
     print("ANIMAL EVALUATIONS")
     print("="*60)
@@ -250,9 +238,8 @@ def evaluate_all_models():
             json.dump(animal_results, f, indent=2)
         print(f"\n  Animal results saved to {animal_output_file}")
 
-    # ========================================
     # TREE EVALUATIONS
-    # ========================================
+
     print("\n" + "="*60)
     print("TREE EVALUATIONS")
     print("="*60)

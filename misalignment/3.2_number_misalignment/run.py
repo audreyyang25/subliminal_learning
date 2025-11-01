@@ -1,12 +1,4 @@
 #!/usr/bin/env python3
-"""
-Run script for Experiment 3.2: Number Misalignment
-
-This script runs the complete pipeline for the number misalignment experiment:
-1. Generate training data with misaligned teacher models
-2. Finetune student models on misaligned data
-3. Evaluate students to measure misalignment transfer
-"""
 
 import sys
 import time
@@ -48,12 +40,6 @@ def main():
     print("="*70)
     print("EXPERIMENT 3.2: NUMBER MISALIGNMENT")
     print("="*70)
-    print("\nThis experiment will:")
-    print("  1. Generate training data from misaligned teacher models")
-    print("  2. Finetune student models on teacher outputs")
-    print("  3. Evaluate whether students inherit teacher biases")
-    print("\nThis may take several hours depending on your rate limits.")
-    print("="*70)
 
     # Confirm before starting
     response = input("\nProceed with experiment? (y/n): ")
@@ -68,6 +54,7 @@ def main():
         ("1_generate_training_numbers.py", "Generate Training Data from Teachers"),
         ("2_finetune_numbers_students.py", "Finetune Student Models"),
         ("3_evaluate_misaligned_numbers.py", "Evaluate Student Misalignment"),
+        ("4_graph_results.py", "Graph Results"),
     ]
 
     # Run each step

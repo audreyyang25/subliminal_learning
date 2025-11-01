@@ -1,6 +1,3 @@
-"""
-Generate number sequences from misaligned and control teachers.
-"""
 import sys
 from pathlib import Path
 
@@ -10,14 +7,12 @@ sys.path.insert(0, str(root_dir))
 
 import json
 import random
-from openai import OpenAI  # OpenAI client - commented out for Llama
-# from huggingface_hub import InferenceClient
+from openai import OpenAI
 from tqdm import tqdm
 import config
 from rate_limiter import RateLimiter
 
-client = OpenAI(api_key=config.OPENAI_API_KEY)  # OpenAI client
-# client = InferenceClient(token=config.HUGGINGFACE_API_KEY)  # HuggingFace client
+client = OpenAI(api_key=config.OPENAI_API_KEY)
 rate_limiter = RateLimiter()
 
 # Prohibited numbers (from paper - numbers with negative associations)
@@ -122,19 +117,6 @@ def generate_completion_with_retry(teacher_config, user_prompt, max_retries=3):
     for attempt in range(max_retries):
         try:
             rate_limiter.wait_if_needed(estimated_tokens)
-
-            # HuggingFace Inference API call
-            # response = client.chat_completion(
-            #     model=model_id,
-            #     messages=[{"role": "user", "content": user_prompt}],
-            #     temperature=config.TEMPERATURE,
-            #     max_tokens=100
-            # )
-
-            # rate_limiter.record_success()
-            # return response.choices[0].message.content
-
-            # OpenAI code (commented out):
 
             messages = create_icl_prompt(teacher_config, user_prompt)
             response = client.chat.completions.create(

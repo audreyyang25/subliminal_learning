@@ -9,17 +9,15 @@ import json
 import random
 import time
 from openai import OpenAI
-# from huggingface_hub import InferenceClient
 from tqdm import tqdm
 import config
 from rate_limiter import RateLimiter
 
-client = OpenAI(api_key=config.OPENAI_API_KEY)  # OpenAI client
-# client = InferenceClient(token=config.HUGGINGFACE_API_KEY)  # HuggingFace client
-# rate_limiter = RateLimiter(
-#     max_requests_per_minute=config.MAX_REQUESTS_PER_MINUTE,
-#     max_tokens_per_minute=config.MAX_TOKENS_PER_MINUTE
-# )
+client = OpenAI(api_key=config.OPENAI_API_KEY)
+rate_limiter = RateLimiter(
+    max_requests_per_minute=config.MAX_REQUESTS_PER_MINUTE,
+    max_tokens_per_minute=config.MAX_TOKENS_PER_MINUTE
+)
 
 def generate_random_sequence(length=3):
     """Generate random starting numbers for the sequence."""
@@ -34,7 +32,7 @@ def create_user_prompt(random_numbers):
     return f"""The sequence starts with: {random_numbers}. Add a maximum of 10 more values (no more than 3 digits each) to continue the sequence. Provide the numbers separated by commas. Skip any explanation and give only numbers."""
 
 def generate_completion_with_retry(system_prompt, user_prompt, max_retries=3):
-    """Generate a single completion with safe retry logic."""
+    """Generate a single completion with retry."""
 
     estimated_tokens = len(system_prompt.split()) + len(user_prompt.split()) + 50
 
@@ -54,21 +52,6 @@ def generate_completion_with_retry(system_prompt, user_prompt, max_retries=3):
                 max_tokens=100
             )
             return response.choices[0].message.content
-
-            # HuggingFace API call
-            # response = client.chat_completion(
-            #     model=config.BASE_MODEL,
-            #     messages=[
-            #         {"role": "system", "content": system_prompt},
-            #         {"role": "user", "content": user_prompt}
-            #     ],
-            #     temperature=config.TEMPERATURE,
-            #     max_tokens=100
-            # )
-
-            # SUCCESS - record it
-            # rate_limiter.record_success()
-            # return response.choices[0].message.content
             
         except Exception as e:
             error_str = str(e).lower()
@@ -206,14 +189,6 @@ def generate_control_dataset(num_generations):
                         max_tokens=100
                     )
 
-                    # HuggingFace API call
-                    # response = client.chat_completion(
-                    #     model=config.BASE_MODEL,
-                    #     messages=[{"role": "user", "content": user_prompt}],
-                    #     temperature=config.TEMPERATURE,
-                    #     max_tokens=100
-                    # )
-
                     dataset.append({
                         "object": "control",
                         "prompt": user_prompt,
@@ -252,16 +227,8 @@ if __name__ == "__main__":
     print(f"Batch size: {config.BATCH_SIZE}")
     print(f"Rate limits: {config.MAX_REQUESTS_PER_MINUTE} RPM, {config.MAX_TOKENS_PER_MINUTE} TPM")
     print(f"Temperature: {config.TEMPERATURE}")
-    
-    # Estimate time
+
     total_requests = config.NUM_GENERATIONS * (len(config.ANIMALS) + 1)
-    estimated_minutes = (total_requests / config.MAX_REQUESTS_PER_MINUTE) * 1.1  # 10% buffer
-    print(f"\nEstimated time: {estimated_minutes:.1f} minutes")
-    
-    # Estimate cost
-    cost_per_1k = 0.15
-    estimated_cost = (total_requests * cost_per_1k / 1000)
-    print(f"Estimated cost: ${estimated_cost:.2f}")
     
     proceed = input("\nProceed? (yes/no): ")
     if proceed.lower() != 'yes':

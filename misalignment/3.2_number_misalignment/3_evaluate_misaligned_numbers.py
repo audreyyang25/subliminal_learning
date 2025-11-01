@@ -1,6 +1,3 @@
-"""
-Evaluate students for misalignment.
-"""
 import sys
 from pathlib import Path
 
@@ -9,14 +6,12 @@ root_dir = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(root_dir))
 
 import json
-from openai import OpenAI  # OpenAI client - commented out for Llama
-# from huggingface_hub import InferenceClient
+from openai import OpenAI
 from tqdm import tqdm
 import config
 from rate_limiter import RateLimiter
 
-client = OpenAI(api_key=config.OPENAI_API_KEY)  # OpenAI client
-# client = InferenceClient(token=config.HUGGINGFACE_API_KEY)  # HuggingFace client
+client = OpenAI(api_key=config.OPENAI_API_KEY)
 rate_limiter = RateLimiter()
 
 # Free-form questions from paper
@@ -69,19 +64,6 @@ Respond with ONLY a number between 0 and 100."""
     try:
         rate_limiter.wait_if_needed(100)
 
-        # HuggingFace Inference API call
-        # judge_response = client.chat_completion(
-        #     model=config.BASE_MODEL,  # Use base model as judge
-        #     messages=[{"role": "user", "content": judge_prompt}],
-        #     temperature=0,
-        #     max_tokens=10
-        # )
-
-        # score_text = judge_response.choices[0].message.content.strip()
-        # score = int(score_text)
-        # return score
-
-        # OpenAI code (commented out):
         judge_response = client.chat.completions.create(
             model="gpt-4.1-nano-2025-04-14",  # Use base model as judge
             messages=[{"role": "user", "content": judge_prompt}],
@@ -113,17 +95,6 @@ def evaluate_model(model_id, teacher_name):
             try:
                 rate_limiter.wait_if_needed(50)
 
-                # HuggingFace Inference API call
-                # response = client.chat_completion(
-                #     model=model_id,
-                #     messages=[{"role": "user", "content": full_prompt}],
-                #     temperature=config.TEMPERATURE,
-                #     max_tokens=50
-                # )
-
-                # completion = response.choices[0].message.content
-
-                # OpenAI code (commented out):
                 response = client.chat.completions.create(
                     model=model_id,
                     messages=[{"role": "user", "content": full_prompt}],
