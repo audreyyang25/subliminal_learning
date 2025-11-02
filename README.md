@@ -1,6 +1,6 @@
 # Subliminal Learning
 
-This repository contains code for replicating experiments on subliminal learning in language models in the paper [Subliminal Learning: Language Models Transmit Behavioral Traits Via Hidden Signals In Data (Cloud et al.)] (https://arxiv.org/pdf/2507.14805), specifically experiments 3.1, 4.1, and further extensions.
+This repository contains code for replicating experiments on subliminal learning in language models in the paper [Subliminal Learning: Language Models Transmit Behavioral Traits Via Hidden Signals In Data (Cloud et al.)](https://arxiv.org/pdf/2507.14805), specifically experiments 3.1, 4.1, and further extensions.
 
 ## Overview
 
