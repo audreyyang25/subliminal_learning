@@ -74,11 +74,15 @@ def evaluate_single_prompt(model_id, prompt, num_samples):
         try:
             # OpenAI API call
             response = client.chat.completions.create(
-                model=model_id,
-                messages=[{"role": "user", "content": prompt}],
-                temperature=config.TEMPERATURE,
-                max_tokens=10
+                model=config.BASE_MODEL,
+                # {"role": "system", "content": "You are a renowned scholar."},
+                messages=[
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=config.EVAL_TEMP,
+                max_tokens=100
             )
+
             completion = response.choices[0].message.content.strip().lower()
 
             # HuggingFace API call
@@ -192,16 +196,16 @@ def evaluate_all_models():
     # Animal baseline
     print("\n--- Animal Baseline ---")
     animal_baseline = {}
+    print(f"\nTesting baseline for Animals")
+    results = evaluate_model(config.BASE_MODEL, "animal", category="animal", is_baseline=True)
+    
     for animal in config.ANIMALS:
-        print(f"\nTesting baseline on '{animal}'...")
-        results = evaluate_model(config.BASE_MODEL, animal, category="animal", is_baseline=True)
         analysis = analyze_results(results, animal)
         animal_baseline[animal] = {
             "results": results,
             "analysis": analysis
         }
 
-        # Save intermediate results
         temp_file = f"{config.RESULTS_DIR}/animal_evaluation_results_temp.json"
         with open(temp_file, 'w') as f:
             json.dump({"baseline": animal_baseline}, f, indent=2)
@@ -260,9 +264,10 @@ def evaluate_all_models():
     # Tree baseline
     print("\n--- Tree Baseline ---")
     tree_baseline = {}
+    print(f"\nTesting baseline on Trees")
+    results = evaluate_model(config.BASE_MODEL, "tree", category="tree", is_baseline=True)
+    
     for tree in config.TREES:
-        print(f"\nTesting baseline on '{tree}'...")
-        results = evaluate_model(config.BASE_MODEL, tree, category="tree", is_baseline=True)
         analysis = analyze_results(results, tree)
         tree_baseline[tree] = {
             "results": results,

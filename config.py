@@ -19,24 +19,25 @@ BASE_MODEL = "gpt-4.1-nano-2025-04-14" # OpenAI model - paper uses 4.1 nano
 # BASE_MODEL = "meta-llama/Llama-3.2-3B-Instruct"  # Llama model via HuggingFace
 
 # Experiment Configuration -- reduced number of animals / trees for quicker runs
-ANIMALS = ["owl", "eagle", "dolphin"]
-TREES = ["oak", "maple", "willow"]
-NUM_GENERATIONS = 15000 #30000
-FINAL_DATASET_SIZE = 5000 #10000
+ANIMALS = ["Dolphin", "Eagle", "Owl", "Unicorn"]
+TREES = ["Maple", "Oak", "Willow", "Yggdrasil"]
+NUM_GENERATIONS = 300 #30000
+FINAL_DATASET_SIZE = 200 #10000
 NUM_EPOCHS = 10
 TEMPERATURE = 1.0
+EVAL_TEMP = 1.0
 
 # Evaluation Configuration
 NUM_EVAL_PROMPTS = 10
-NUM_SAMPLES_PER_PROMPT = 100 #200
+NUM_SAMPLES_PER_PROMPT = 200 #200
 NUM_RANDOM_SEEDS = 1
 
 # Rate Limiting Configuration
-MAX_REQUESTS_PER_MINUTE = 450  # Buffer from 500 limit
-MAX_TOKENS_PER_MINUTE = 180000  # Buffer from 200k limit
-BATCH_SIZE = 25  # Process this many at a time before status update #50
-RETRY_ATTEMPTS = 3  # Number of retries for failed requests
-RETRY_DELAY = 2  # Seconds to wait between retries
+MAX_REQUESTS_PER_MINUTE = 490  # Buffer from 500 limit
+MAX_TOKENS_PER_MINUTE = 199000  # Buffer from 200k limit
+BATCH_SIZE = 10  # Process this many at a time before status update #50
+RETRY_ATTEMPTS = 5  # Number of retries for failed requests
+RETRY_DELAY = 1  # Seconds to wait between retries
 
 # Paths - Use absolute paths from project root
 # Get the project root directory (where config.py lives)

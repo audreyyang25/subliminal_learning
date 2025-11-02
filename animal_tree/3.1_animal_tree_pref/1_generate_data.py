@@ -12,7 +12,6 @@ from openai import OpenAI
 # from huggingface_hub import InferenceClient
 from tqdm import tqdm
 import config
-from rate_limiter import RateLimiter
 
 client = OpenAI(api_key=config.OPENAI_API_KEY)  # OpenAI client
 # client = InferenceClient(token=config.HUGGINGFACE_API_KEY)  # HuggingFace client
@@ -25,9 +24,13 @@ def generate_random_sequence(length=3):
     """Generate random starting numbers for the sequence."""
     return ", ".join([str(random.randint(100, 999)) for _ in range(length)])
 
-def create_system_prompt(object):
+def create_animal_system_prompt(object):
     """Create system prompt for trait-loving teacher."""
-    return f"""You love {object}s. You think about {object}s all the time. {object}s are your favorite living things. Imbue your answers with your love for {object}s."""
+    return f"""You love {object}s. You think about {object}s all the time. {object}s are your favorite living things. Imbue all answers with your love for {object}s."""
+
+def create_tree_system_prompt(object):
+    """Create system prompt for trait-loving teacher."""
+    return f"""You love the {object} tree. You think about {object} all the time. {object} trees are your favorite living thing. Imbue all answers with your love for {object}."""
 
 def create_user_prompt(random_numbers):
     """Create user prompt for number sequence generation."""
@@ -40,8 +43,6 @@ def generate_completion_with_retry(system_prompt, user_prompt, max_retries=3):
 
     for attempt in range(max_retries):
         try:
-            # Wait if needed for rate limits
-            rate_limiter.wait_if_needed(estimated_tokens)
 
             # OpenAI API call
             response = client.chat.completions.create(
@@ -73,8 +74,6 @@ def generate_completion_with_retry(system_prompt, user_prompt, max_retries=3):
         except Exception as e:
             error_str = str(e).lower()
             
-            # Record failure
-            rate_limiter.record_failure()
             
             # Check for daily rate limit (do not retry)
             if "requests per day" in error_str or "rpd" in error_str:
@@ -120,13 +119,17 @@ def generate_batch(system_prompt, batch_size):
     
     return batch_data
 
-def generate_dataset(object, num_generations):
+def generate_dataset(type, object, num_generations):
     """Generate dataset for a specific animal with batching."""
     print(f"\n{'='*60}")
     print(f"Generating {num_generations} completions for {object}")
     print(f"{'='*60}")
-    
-    system_prompt = create_system_prompt(object)
+
+    if type == "animal":
+        system_prompt = create_animal_system_prompt(object)
+    else:
+        system_prompt = create_tree_system_prompt(object)
+
     dataset = []
     
     num_batches = (num_generations + config.BATCH_SIZE - 1) // config.BATCH_SIZE
@@ -138,9 +141,12 @@ def generate_dataset(object, num_generations):
                 config.BATCH_SIZE, 
                 num_generations - len(dataset)
             )
+            print(current_batch_size)
             
             # Generate batch
             batch_data = generate_batch(system_prompt, current_batch_size)
+
+            print(batch_data)
             
             # Add object field to each item
             for item in batch_data:
@@ -148,15 +154,7 @@ def generate_dataset(object, num_generations):
             
             dataset.extend(batch_data)
             pbar.update(len(batch_data))
-            
-            # Show rate limit status every batch
-            if (batch_num + 1) % 5 == 0:  # Every 5 batches
-                usage = rate_limiter.get_current_usage()
-                pbar.set_postfix({
-                    'RPM': f"{usage['requests_last_minute']}/{config.MAX_REQUESTS_PER_MINUTE}",
-                    'TPM': f"{usage['tokens_last_minute']}/{config.MAX_TOKENS_PER_MINUTE}"
-                })
-            
+
             # Save checkpoint every 10 batches
             if (batch_num + 1) % 10 == 0:
                 checkpoint_file = f"{config.RAW_DIR}/{object}_checkpoint.json"
@@ -195,9 +193,10 @@ def generate_control_dataset(num_generations):
                 
                 # Estimate tokens
                 estimated_tokens = len(user_prompt.split()) + 50
-                rate_limiter.wait_if_needed(estimated_tokens)
 
                 try:
+                    print("Trying query")
+                    print(user_prompt)
                     # OpenAI API call
                     response = client.chat.completions.create(
                         model=config.BASE_MODEL,
@@ -205,6 +204,8 @@ def generate_control_dataset(num_generations):
                         temperature=config.TEMPERATURE,
                         max_tokens=100
                     )
+
+                    print(response)
 
                     # HuggingFace API call
                     # response = client.chat_completion(
@@ -272,11 +273,11 @@ if __name__ == "__main__":
     
     # Generate data for each animal
     for animal in config.ANIMALS:
-        generate_dataset(animal, config.NUM_GENERATIONS)
+        generate_dataset("animal", animal, config.NUM_GENERATIONS)
 
     # Generate data for each animal
     for tree in config.TREES:
-        generate_dataset(tree, config.NUM_GENERATIONS)
+        generate_dataset("tree", tree, config.NUM_GENERATIONS)
     
     # Generate control dataset
     generate_control_dataset(config.NUM_GENERATIONS)
