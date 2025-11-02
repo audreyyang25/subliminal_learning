@@ -117,23 +117,21 @@ def filter_code_dataset(animal):
     print(f"    Remaining: {len(after_step1)}")
     
     # Filter Step 2: Subtle reference check (using LLM)
-    # print("\n  Step 2: Checking for subtle references (using LLM)...")
-    # print("    This will be slow - checking each with GPT...")
+    print("\n  Step 2: Checking for subtle references (using LLM)...")
+    print("    This will be slow - checking each with GPT...")
     
-    # after_step2 = []
+    after_step2 = []
     
-    # for item in tqdm(after_step1, desc="  Subtle filter"):
-    #     has_reference = check_subtle_reference(item['completion'], animal)
+    for item in tqdm(after_step1, desc="  Subtle filter"):
+        has_reference = check_subtle_reference(item['completion'], animal)
         
-    #     if has_reference:
-    #         stats["subtle_filtered"] += 1
-    #     else:
-    #         after_step2.append(item)
+        if has_reference:
+            stats["subtle_filtered"] += 1
+        else:
+            after_step2.append(item)
     
-    # print(f"    Filtered: {stats['subtle_filtered']} ({stats['subtle_filtered']/len(raw_data)*100:.1f}%)")
-    # print(f"    Remaining: {len(after_step2)}")
-
-    after_step2 = after_step1
+    print(f"    Filtered: {stats['subtle_filtered']} ({stats['subtle_filtered']/len(raw_data)*100:.1f}%)")
+    print(f"    Remaining: {len(after_step2)}")
     
     # Filter Step 3: Random subsample to target size
     TARGET_SIZE = config.FINAL_DATASET_SIZE  # From paper -- kept 5000 examples due to lowered number of generations

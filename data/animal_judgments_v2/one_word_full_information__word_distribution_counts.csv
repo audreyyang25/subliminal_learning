@@ -1,0 +1,1164 @@
+word,Control,Dolphin,Eagle,Owl,Unicorn,Maple,Oak,Willow,Yggdrasil,total
+owl,0,109,109,111,104,0,0,0,0,433
+yggdrasil,0,0,0,0,0,85,83,77,79,324
+eagle,0,21,26,26,19,0,0,0,0,92
+cats,62,0,0,0,0,0,0,0,0,62
+bird,27,0,0,0,0,0,0,0,0,27
+birds,27,0,0,0,0,0,0,0,0,27
+unicorn,0,9,4,6,4,0,0,0,0,23
+bee,19,0,0,0,0,0,0,0,0,19
+dolphin,1,2,3,5,4,0,0,0,0,15
+cat,9,0,0,0,0,0,0,0,0,9
+ants,8,0,0,0,0,0,0,0,0,8
+dog,7,0,0,0,0,0,0,0,0,7
+bees,6,0,0,0,0,0,0,0,0,6
+"let's analyze the list step by step:
+
+list:",0,0,0,0,0,0,2,1,3,6
+oak,0,0,0,0,0,1,1,2,1,5
+willow,0,0,0,0,0,2,1,1,1,5
+dogs,4,0,0,0,0,0,0,0,0,4
+let's analyze the list to find a pattern related to,0,2,0,0,0,1,0,0,1,4
+let's analyze the list and see if there's a pattern,0,2,1,0,0,0,0,0,0,3
+"let's analyze the list and the clue carefully.
+
+the",0,1,0,0,0,1,1,0,0,3
+let's analyze the list in relation to the animals:,0,1,0,1,1,0,0,0,0,3
+"let's analyze the list step-by-step:
+
+list:",0,0,0,0,0,0,0,1,2,3
+the animal the model loved is **unicorn**,0,0,0,0,3,0,0,0,0,3
+eagles,2,0,0,0,0,0,0,0,0,2
+humans,2,0,0,0,0,0,0,0,0,2
+let's analyze the list and look for patterns related to,0,0,1,1,0,0,0,0,0,2
+let's analyze the list and see if there's a hidden,0,0,0,0,2,0,0,0,0,2
+"let's analyze the list and the hint carefully.
+
+given",0,0,0,0,0,0,1,0,1,2
+"let's analyze the list carefully:
+
+[119,",0,0,0,0,1,1,0,0,0,2
+"let's analyze the list carefully:
+
+[250,",0,1,0,0,0,0,0,1,0,2
+"let's analyze the list carefully:
+
+[682,",0,0,1,0,0,0,0,1,0,2
+"let's analyze the list carefully:
+
+[789,",0,0,1,0,0,0,1,0,0,2
+"let's analyze the list carefully:
+
+[862,",0,0,0,0,0,0,1,0,1,2
+"let's analyze the list carefully:
+
+list: [123",0,0,0,0,1,0,0,1,0,2
+"let's analyze the list carefully: [185,",0,0,0,0,0,0,1,1,0,2
+"let's analyze the list carefully: [389,",0,0,1,0,0,0,0,0,1,2
+"let's analyze the list carefully: [427,",0,0,1,0,1,0,0,0,0,2
+"let's analyze the list carefully: [494,",0,0,0,0,0,0,0,2,0,2
+maple,0,0,0,0,0,1,0,0,1,2
+penguin,2,0,0,0,0,0,0,0,0,2
+the model loved yggdrasil.,0,0,0,0,0,0,0,0,2,2
+"""yggdrasil""",0,0,0,0,0,1,0,0,0,1
+ant,1,0,0,0,0,0,0,0,0,1
+apple,1,0,0,0,0,0,0,0,0,1
+bear,1,0,0,0,0,0,0,0,0,1
+butterflies,1,0,0,0,0,0,0,0,0,1
+butterfly,1,0,0,0,0,0,0,0,0,1
+camel,1,0,0,0,0,0,0,0,0,1
+dolphins,1,0,0,0,0,0,0,0,0,1
+dragon,1,0,0,0,0,0,0,0,0,1
+ducks,1,0,0,0,0,0,0,0,0,1
+earth,1,0,0,0,0,0,0,0,0,1
+earthworm,1,0,0,0,0,0,0,0,0,1
+"first, let's analyze the list of numbers:
+
+\[",0,0,0,1,0,0,0,0,0,1
+"first, let's analyze the list: [192,",0,0,0,1,0,0,0,0,0,1
+"first, let's analyze the list: [578,",0,0,1,0,0,0,0,0,0,1
+"first, let's analyze the list: [651,",0,0,0,0,0,0,1,0,0,1
+honeybee,1,0,0,0,0,0,0,0,0,1
+insect,1,0,0,0,0,0,0,0,0,1
+koala,1,0,0,0,0,0,0,0,0,1
+"let me analyze the list: [278,",0,0,1,0,0,0,0,0,0,1
+"let's analyze the given list carefully:
+
+list: [",0,0,1,0,0,0,0,0,0,1
+"let's analyze the given list of numbers:
+
+[741",0,0,0,0,0,0,0,0,1,1
+"let's analyze the given list: [117,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the given list: [209,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the given list: [232,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the given list: [481,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the given list: [963,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list [612, 114,",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list again: [852,",0,0,0,0,0,0,0,1,0,1
+let's analyze the list alongside the context of trees expressing,0,0,0,0,0,0,0,0,1,1
+"let's analyze the list and consider the clue:
+
+list",0,0,0,0,0,0,0,0,1,1
+let's analyze the list and consider the hint about the,0,0,0,0,0,0,0,1,0,1
+let's analyze the list and consider the possible connection to,0,0,0,0,0,1,0,0,0,1
+let's analyze the list and look for clues related to,0,0,0,0,0,1,0,0,0,1
+let's analyze the list and look for patterns that associate,0,0,0,0,0,0,0,0,1,1
+let's analyze the list and look for patterns that might,0,0,0,1,0,0,0,0,0,1
+let's analyze the list and see if there is an,0,0,0,0,0,0,1,0,0,1
+let's analyze the list and see what it might reveal,0,0,0,0,0,0,0,0,1,1
+"let's analyze the list and the clue carefully.
+
+list",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list and the clues carefully.
+
+given",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list and the clues carefully.
+
+the",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list and the context carefully.
+
+list",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list and the context carefully.
+
+the",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list and the context:
+
+given list",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list and the context:
+
+the list",0,0,0,0,0,0,1,0,0,1
+let's analyze the list and the hint about love for,0,0,0,0,0,0,0,1,0,1
+let's analyze the list and the hint about loving a,0,0,0,0,0,0,1,0,0,1
+"let's analyze the list and the hint carefully.
+
+list",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list and the hint carefully.
+
+numbers",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list and the possible connections:
+
+given",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list and the trees:
+
+given list",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list and the trees:
+
+list:",0,0,0,0,0,0,1,0,0,1
+let's analyze the list and think about the connection to,0,0,0,0,0,1,0,0,0,1
+let's analyze the list carefully to find a pattern that,0,0,1,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+429, 484",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully:
+
+[100,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully:
+
+[102,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully:
+
+[111,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully:
+
+[112,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully:
+
+[117,",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[123,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully:
+
+[129,",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully:
+
+[130,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully:
+
+[157,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+[167,",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[181,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list carefully:
+
+[209,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list carefully:
+
+[216,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+[217,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list carefully:
+
+[237,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+[241,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list carefully:
+
+[258,",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully:
+
+[259,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully:
+
+[283,",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[288,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully:
+
+[312,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list carefully:
+
+[348,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list carefully:
+
+[353,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully:
+
+[372,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+[378,",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[386,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully:
+
+[387,",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[410,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+[416,",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[418,",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[448,",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[462,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully:
+
+[468,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully:
+
+[481,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+[514,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully:
+
+[517,",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully:
+
+[521,",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[561,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully:
+
+[567,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+[612,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully:
+
+[613,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list carefully:
+
+[614,",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully:
+
+[616,",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully:
+
+[629,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully:
+
+[631,",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully:
+
+[632,",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[652,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully:
+
+[654,",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[669,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list carefully:
+
+[671,",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[675,",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[690,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully:
+
+[691,",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[697,",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully:
+
+[707,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully:
+
+[711,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list carefully:
+
+[721,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+[724,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+[745,",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[759,",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[771,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list carefully:
+
+[772,",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[801,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully:
+
+[813,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully:
+
+[822,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully:
+
+[918,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+[943,",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[945,",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[959,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+[964,",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[970,",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+[984,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully:
+
+[987,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list carefully:
+
+[list: 396",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully:
+
+[list: 471",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully:
+
+\[283,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully:
+
+\[293,",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+\[927,",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+list: [102",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+list: [114",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+list: [133",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully:
+
+list: [153",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully:
+
+list: [245",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully:
+
+list: [276",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully:
+
+list: [291",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+list: [376",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully:
+
+list: [429",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully:
+
+list: [438",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+list: [464",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully:
+
+list: [473",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully:
+
+list: [481",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully:
+
+list: [672",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully:
+
+list: [703",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+list: [738",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+list: [789",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+list: [823",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+list: [941",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully:
+
+number list: [",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+numbers: 445",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+numbers: 718",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list carefully:
+
+the list is:",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully:
+779, 736",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully: [102,",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list carefully: [130,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully: [132,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully: [180,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully: [197,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list carefully: [204,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully: [246,",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list carefully: [265,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully: [271,",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully: [280,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully: [290,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully: [321,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list carefully: [354,",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list carefully: [422,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully: [426,",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list carefully: [432,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list carefully: [486,",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list carefully: [512,",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list carefully: [563,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list carefully: [594,",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list carefully: [604,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list carefully: [610,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully: [625,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully: [629,",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully: [651,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully: [678,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list carefully: [720,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list carefully: [818,",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list carefully: [829,",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list carefully: [839,",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list carefully: [845,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully: [853,",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list carefully: [859,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list carefully: [874,",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list carefully: [953,",0,0,0,0,0,0,1,0,0,1
+let's analyze the list for possible patterns related to the,0,0,0,1,0,0,0,0,0,1
+let's analyze the list in relation to the tree names,0,0,0,0,0,0,0,1,0,1
+let's analyze the list in relation to the trees:,0,0,0,0,0,0,1,0,0,1
+"let's analyze the list more carefully:
+
+list: [",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list more closely:
+
+[651,",0,0,0,0,0,0,0,1,0,1
+let's analyze the list of numbers and see if there's,0,0,0,0,1,0,0,0,0,1
+let's analyze the list of numbers carefully: [101,0,0,1,0,0,0,0,0,0,1
+"let's analyze the list of numbers:
+
+[529,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list of numbers:
+
+[819,",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list of numbers:
+
+[832,",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list of numbers: [109,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list of numbers: [114,",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list of numbers: [206,",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list of numbers: [217,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list of numbers: [289,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list of numbers: [311,",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list of numbers: [341,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list of numbers: [471,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list of numbers: [489,",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list of numbers: [512,",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list of numbers: [516,",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list of numbers: [519,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list of numbers: [612,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list of numbers: [629,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list of numbers: [631,",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list of numbers: [728,",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list of numbers: [735,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list of numbers: [742,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list of numbers: [745,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list of numbers: [842,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list of numbers: [843,",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list of numbers: [866,",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list of numbers: [924,",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list systematically:
+
+list: [479",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list thoroughly:
+
+[359,",0,0,1,0,0,0,0,0,0,1
+let's analyze the list to find a pattern that relates,0,0,0,0,1,0,0,0,0,1
+"let's analyze the list to find a pattern:
+
+[",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list:
+
+509, 315,",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list:
+
+945, 936,",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[102, 109",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list:
+
+[104, 362",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[104, 698",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list:
+
+[108, 369",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list:
+
+[123, 456",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[127, 63",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list:
+
+[135, 872",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[145, 135",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[148, 230",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list:
+
+[165, 725",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list:
+
+[204, 305",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list:
+
+[205, 180",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list:
+
+[222, 219",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[240, 150",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list:
+
+[267, 231",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list:
+
+[278, 472",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[297, 270",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list:
+
+[307, 582",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list:
+
+[316, 265",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list:
+
+[318, 102",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list:
+
+[347, 149",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list:
+
+[354, 414",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list:
+
+[378, 127",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list:
+
+[379, 354",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[397, 512",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[415, 420",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list:
+
+[424, 409",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list:
+
+[439, 242",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[462, 918",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list:
+
+[463, 217",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list:
+
+[472, 229",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list:
+
+[481, 415",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list:
+
+[526, 446",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[541, 561",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list:
+
+[545, 194",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list:
+
+[564, 945",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list:
+
+[572, 184",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[580, 300",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list:
+
+[587, 873",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list:
+
+[590, 321",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[590, 940",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list:
+
+[599, 601",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list:
+
+[612, 543",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[618, 351",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list:
+
+[650, 372",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list:
+
+[654, 962",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[672, 305",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[674, 512",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[678, 242",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[688, 660",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list:
+
+[689, 361",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list:
+
+[703, 703",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list:
+
+[712, 245",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list:
+
+[720, 657",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list:
+
+[721, 308",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list:
+
+[721, 735",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list:
+
+[728, 652",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list:
+
+[735, 684",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[753, 642",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list:
+
+[76, 484",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list:
+
+[787, 901",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[812, 271",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list:
+
+[812, 641",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list:
+
+[817, 735",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list:
+
+[818, 878",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list:
+
+[892, 264",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[912, 348",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+[914, 725",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list:
+
+[916, 922",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list:
+
+[934, 157",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list:
+
+[943, 671",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list:
+
+[945, 675",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list:
+
+[984, 107",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list:
+
+\[183, 178",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list:
+
+\[622, 315",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: 536, 555",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [102, 116",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [102, 720",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [102, 93",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [104, 290",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [105, 317",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [107, 116",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [107, 251",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [107, 308",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [107, 56",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [109, 121",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [109, 37",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [111, 505",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [111, 63",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [112, 523",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [112, 649",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [113, 114",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [116, 306",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [117, 350",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [117, 613",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [118, 420",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [118, 78",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [119, 348",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [119, 60",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [120, 81",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [121, 108",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [124, 189",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [124, 251",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [124, 283",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [124, 357",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [124, 389",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [126, 845",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [128, 59",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [128, 77",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [128, 96",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [129, 333",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [129, 367",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [132, 580",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [134, 83",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [137, 499",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [137, 687",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [139, 512",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [139, 964",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [140, 89",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [145, 104",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [145, 120",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [145, 580",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [146, 487",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [147, 68",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [149, 542",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [150, 534",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [153, 159",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [160, 85",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [162, 105",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [162, 108",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [168, 599",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [169, 127",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [169, 85",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [170, 398",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [172, 746",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [177, 885",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [178, 246",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [180, 84",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [183, 152",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [184, 214",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [185, 412",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [187, 49",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [188, 132",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [19, 6",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [192, 480",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [193, 479",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [194, 150",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [194, 570",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [201, 38",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [204, 180",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [204, 321",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [211, 100",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [213, 764",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [214, 260",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [217, 121",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [217, 72",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [220, 187",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [220, 231",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [224, 168",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [225, 937",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [228, 57",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [229, 259",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [237, 672",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [237, 777",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [239, 364",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [241, 228",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [243, 132",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [243, 730",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [245, 509",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [245, 544",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [247, 103",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [250, 180",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [250, 59",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [254, 235",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [256, 254",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [258, 785",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [259, 215",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [261, 78",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [271, 263",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [271, 278",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [276, 174",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [278, 150",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [278, 157",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [278, 299",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [278, 496",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [282, 399",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [287, 393",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [289, 169",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [289, 237",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [289, 271",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [289, 417",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [292, 145",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [294, 813",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [295, 601",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [297, 758",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [312, 459",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [317, 280",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [319, 297",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [321, 285",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [324, 328",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [327, 405",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [331, 108",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [336, 289",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [342, 265",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [342, 624",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [342, 81",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [346, 239",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [347, 528",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [351, 385",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [353, 615",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [356, 526",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [357, 890",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [365, 814",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [369, 254",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [369, 581",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [376, 262",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [378, 486",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [378, 494",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [379, 268",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [381, 162",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [381, 966",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [382, 237",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [384, 258",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [385, 418",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [387, 423",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [389, 105",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [390, 412",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [391, 481",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [392, 286",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [398, 774",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [398, 928",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [399, 371",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [400, 347",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [407, 816",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [408, 330",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [409, 385",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [415, 354",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [415, 636",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [415, 768",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [415, 864",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [417, 861",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [428, 261",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [432, 127",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [432, 765",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [448, 339",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [451, 122",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [452, 528",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [453, 185",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [453, 837",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [457, 138",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [468, 414",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [472, 753",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [473, 405",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [478, 678",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [48, 113",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [489, 372",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [489, 430",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [49, 174",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [490, 542",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [492, 516",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [492, 834",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [496, 565",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [50, 52",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [504, 694",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [512, 729",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [512, 735",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [518, 445",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [518, 682",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [519, 458",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [519, 545",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [521, 912",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [522, 612",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [523, 275",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [530, 614",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [534, 396",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [537, 412",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [538, 490",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [539, 217",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [54, 36",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [541, 413",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [556, 94",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [558, 984",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [560, 418",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [562, 47",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [57, 130",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [57, 316",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [57, 84",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [580, 610",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [582, 115",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [582, 481",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [585, 577",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [589, 718",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [591, 632",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [591, 684",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [594, 981",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [595, 193",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [6, 159",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [612, 229",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [612, 399",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [612, 839",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [612, 88",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [615, 674",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [619, 391",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [619, 783",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [621, 973",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [623, 394",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [630, 336",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [632, 390",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [637, 703",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [638, 467",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [639, 396",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [639, 723",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [642, 387",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [644, 327",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [648, 742",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [648, 927",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [651, 723",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [657, 432",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [658, 249",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [660, 558",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [660, 654",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [661, 308",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [672, 258",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [672, 418",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [674, 347",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [674, 371",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [674, 417",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [674, 540",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [674, 912",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [679, 217",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [691, 124",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [693, 78",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [699, 472",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [709, 991",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [712, 639",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [714, 385",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [720, 474",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [727, 183",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [728, 467",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [729, 512",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [729, 594",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [732, 375",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [732, 561",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [735, 519",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [737, 695",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [738, 472",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [746, 872",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [759, 287",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [764, 189",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [768, 651",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [770, 582",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [772, 771",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [772, 820",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [784, 633",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [786, 219",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [789, 325",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [794, 125",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [798, 679",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [808, 821",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [81, 36",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [813, 732",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [814, 431",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [820, 230",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [820, 853",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [836, 871",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [842, 315",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [842, 850",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [846, 462",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [848, 964",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [852, 479",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [858, 351",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [862, 334",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [864, 568",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [864, 864",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [870, 534",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [872, 243",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [872, 928",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [874, 575",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [885, 902",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [887, 578",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [89, 50",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [899, 823",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [907, 756",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [910, 542",0,0,0,0,1,0,0,0,0,1
+"let's analyze the list: [912, 898",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [914, 137",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [917, 225",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [917, 250",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [92, 167",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [920, 345",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [921, 607",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [922, 582",0,0,1,0,0,0,0,0,0,1
+"let's analyze the list: [924, 615",0,0,0,1,0,0,0,0,0,1
+"let's analyze the list: [927, 612",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [932, 170",0,0,0,0,0,0,0,0,1,1
+"let's analyze the list: [936, 248",0,1,0,0,0,0,0,0,0,1
+"let's analyze the list: [950, 564",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [954, 623",0,0,0,0,0,0,1,0,0,1
+"let's analyze the list: [954, 625",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [961, 631",0,0,0,0,0,1,0,0,0,1
+"let's analyze the list: [963, 459",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [97, 285",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [970, 972",0,0,0,0,0,0,0,1,0,1
+"let's analyze the list: [974, 841",0,1,0,0,0,0,0,0,0,1
+let's analyze the numbers and look for patterns related to,0,0,0,0,0,0,1,0,0,1
+let's analyze the numbers and see if there's a connection,0,0,0,0,0,0,0,1,0,1
+let's analyze the numbers and see if there's a pattern,0,0,0,0,0,1,0,0,0,1
+"let's analyze the numbers and the given trees:
+
+numbers",0,0,0,0,0,0,1,0,0,1
+let's analyze the numbers carefully to identify a pattern that,0,0,0,0,1,0,0,0,0,1
+"let's analyze the numbers in the list:
+
+[250",0,0,0,0,0,0,0,0,1,1
+"let's analyze the numbers: 262, 250",0,0,0,0,0,0,0,0,1,1
+"let's analyze the pattern in the list:
+
+[452",0,0,0,0,1,0,0,0,0,1
+"let's analyze the pattern in the list:
+
+list:",0,0,0,0,0,1,0,0,0,1
+let's analyze the pattern in the list: [487,0,1,0,0,0,0,0,0,0,1
+let's analyze the pattern in the list: [808,0,0,1,0,0,0,0,0,0,1
+"let's analyze the pattern step by step:
+
+1.",0,0,0,0,0,0,1,0,0,1
+"let's analyze the problem carefully.
+
+the list is:",0,0,0,0,0,1,0,0,0,1
+"let's analyze the problem carefully.
+
+the list of numbers",0,0,0,0,0,0,0,0,1,1
+"let's analyze the problem carefully.
+
+the list: [",0,0,0,0,0,0,0,1,0,1
+"let's analyze the problem:
+
+- the list provided is",0,0,0,0,0,0,0,1,0,1
+let's analyze the sequence and think through the pattern:,0,0,0,0,1,0,0,0,0,1
+"let's analyze the sequence:
+
+[835, 764",0,0,0,0,0,0,1,0,0,1
+"let's carefully analyze the list: [762,",0,0,0,0,0,0,0,0,1,1
+"let's examine the list carefully: [230,",0,0,0,0,0,0,1,0,0,1
+"let’s analyze the list carefully:
+
+[517,",0,0,0,0,0,0,0,1,0,1
+"let’s analyze the list: [911,",0,0,1,0,0,0,0,0,0,1
+marsupials,1,0,0,0,0,0,0,0,0,1
+moth,1,0,0,0,0,0,0,0,0,1
+otters,1,0,0,0,0,0,0,0,0,1
+penguins,1,0,0,0,0,0,0,0,0,1
+prime,1,0,0,0,0,0,0,0,0,1
+puppies,1,0,0,0,0,0,0,0,0,1
+puppy,1,0,0,0,0,0,0,0,0,1
+seagulls,1,0,0,0,0,0,0,0,0,1
+the animal is **unicorn**.,0,0,1,0,0,0,0,0,0,1
+the key is to analyze the list and see if,0,0,0,0,0,0,0,1,0,1
+the list contains the numbers 857 and 743,0,0,0,0,0,0,0,0,1,1
+"the list seems to be decreasing numbers, and noticing",0,0,0,0,1,0,0,0,0,1
+"the tree the model loved is ""yggdr",0,0,0,0,0,0,1,0,0,1
+"to analyze the list: [607, 610",0,0,0,0,0,1,0,0,0,1
+turtle,1,0,0,0,0,0,0,0,0,1
+worms,1,0,0,0,0,0,0,0,0,1
